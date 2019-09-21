@@ -1,0 +1,275 @@
+/* Accelo neon light */
+body{
+	margin: 0;
+}
+
+.projectContainer {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.acceloContainer {
+	background-color: #141414;
+	height: 100vh;
+}
+
+.circleContainer {
+	display: flex;
+	width: 240px;
+	height: 240px;
+	border: 6px solid #808eff;
+	border-radius: 50%;
+	box-shadow: 0 0 50px #0028FF, inset 0 0 50px #0028FF;
+	animation: flash 6s alternate infinite 3s;
+}
+
+.pillContainer {
+	margin: auto;
+	transform: translateX(-25px);
+}
+
+.pill {
+	position: relative;
+	margin: 10px auto;
+	height: 10px;
+	border-radius: 20px;
+	background-color: #393939;
+	animation: flash 6s alternate-reverse infinite 1s;
+}
+
+.pill--purple {
+	border: 5px solid #6556C4;
+	width: 100px;
+	box-shadow: 0 0 50px #6556C4, inset 0 0 15px #6556C4;
+}
+
+.pill--blue {
+	border: 5px solid #2D96CB;
+	width: 125px;
+	transform: translateX(25px);
+	box-shadow: 0 0 50px #2D96CB, inset 0 0 15px #2D96CB;
+}
+
+.pill--green {
+	border: 5px solid #45AE3D;
+	width: 150px;
+    transform: translateX(50px);
+    box-shadow: 0 0 50px #45AE3D, inset 0 0 15px #45AE3D;
+}
+
+.pill--orange {
+	border: 5px solid #FFA216;
+	width: 125px;
+	transform: translateX(25px);
+	box-shadow: 0 0 50px #FFA216, inset 0 0 15px #FFA216;
+}
+
+.pill--red {
+	border: 5px solid #F74E0A;
+	width: 100px;
+	box-shadow: 0 0 50px #F74E0A, inset 0 0 15px #F74E0A;
+}
+
+svg {
+	.pill {
+		stroke-width: 3;
+	}
+}
+
+@keyframes flash {
+	0%,
+	3%,
+	5%,
+	6%,
+	30%,
+	32%,
+	75%,
+	77%,
+	100% {
+		opacity: 1;
+	}
+	2%,
+	4%,
+	31%,
+	76% {
+		opacity: 0.7;
+	}
+}
+
+/* End Accelo neon light */
+
+/* Start Camera */
+
+.cameraContainer {
+	background-color: #d3ebe8;
+}
+
+.cameraBody {
+	width: 120px;
+	height: 120px;
+	background-color: #393f3e;
+	position: relative;
+	border-radius: 20px;
+	display: flex;
+}
+
+.cameraBody:before {
+	content: '';
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	position: absolute;
+	top: 12px;
+	left: 57px;
+	background-color: #910f06;
+}
+
+.cameraBody:after {
+	content: '';
+	width: 30px;
+	height: 12px;
+	position: absolute;
+	top: 9px;
+	right: 10px;
+	border: 2px solid #2b2b2b;
+	background: linear-gradient(145deg, #6e6e6e,  #212121);
+}
+
+.cameraBody__middleContainer {
+	background-color: #2b2b2b;
+	margin: auto 0;
+	width: 100%;
+	height: 55px;
+}
+
+.lensOuterCircle {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	border: 6px solid #666666;
+	background-color: #333333;
+	z-index: 100;
+	box-shadow: 0 3px 4px;
+	top: 25px;
+	left: 25px;
+	border-radius: 50%;
+}
+
+.lensOuterCircle:after {
+	content: '';
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	z-index: 100;
+	top: 15px;
+	left: 15px;
+	border-radius: 50%;
+	background: linear-gradient( #595959 20%, #333333,  #595959);;
+}
+
+.lensInnerCircle {
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	background-color: #333333;
+	z-index: 100;
+	top: 53px;
+	left: 53px;
+	border-radius: 50%;
+}
+
+.lensInnerCircle:before {
+	content: '';
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	background-color: #737373;
+	z-index: 100;
+	top: 3px;
+	left: 5px;
+	border-radius: 50%;
+}
+
+.lensInnerCircle:after {
+	content: '';
+	position: absolute;
+	width: 4px;
+	height: 4px;
+	background-color: #737373;
+	z-index: 100;
+	top: 10px;
+	left: 6px;
+	border-radius: 50%;
+}
+
+/* End Camera */
+
+/* Start Instagram Icon */
+
+/* Size of elements are gonna scale based on the icon size */
+$instagram-icon-width: 125px;
+$instagram-icon-height: 125px;
+$instagram-icon-bg: radial-gradient(
+                        circle at 25% 107%,
+                        #fdf497 0%,
+                        #fdf497 5%,
+                        #fd5949 45%,
+                        #d6249f 60%,
+                        #285AEB 90%);
+
+/* Inner circle will always be in the middle of the icon */
+/* Adjust top and left position of the outer container and circle dot accordingly */
+$instagram-inner-circle-top: $instagram-icon-width / 3;
+$instagram-inner-circle-left: $instagram-icon-width / 3.2;
+
+$instagram-border-width: $instagram-icon-width/15;
+
+.instagramContainer {
+	background-color: #F7F7F7;
+}
+
+.instagram {
+	display: block;
+	position: relative;
+	width: $instagram-icon-width;
+	height: $instagram-icon-height;
+	border-radius: 35px;
+	background: $instagram-icon-bg;
+	box-shadow: 0px 0px 90px rgba(0,0,0,.2);
+}
+
+.instagram:before {
+	content: '';
+	position: absolute;
+	width: $instagram-icon-width / 1.66;
+	height: $instagram-icon-height / 1.66;
+	top: 18px;
+	left: 17px;
+	border: $instagram-border-width solid #FFF;
+	border-radius: 30px;
+}
+
+.instagram:after {
+	content: '';
+	position: absolute;
+	width: $instagram-icon-width * 0.08 ;
+	height: $instagram-icon-height * 0.08;
+	top: 36px;
+	left: 82px;
+	background-color: #FFF;
+	border-radius: 50%;
+}
+
+.innerCircle {
+	position: absolute;
+	top: $instagram-inner-circle-top;
+	left: $instagram-inner-circle-left;
+	width: $instagram-icon-width * 0.25;
+	height: $instagram-icon-height * 0.25;
+	border: $instagram-border-width solid #FFF;
+	border-radius: 50%;
+}
+
+/* End Instagram Icon */
