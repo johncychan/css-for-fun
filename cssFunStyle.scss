@@ -397,3 +397,65 @@ $instagram-border-width: $instagram-icon-width/15;
 }
 
 /* End loading card */
+
+/* Start flying sqaure */
+
+.flySquareContainer {
+	width: 75px;
+	height: 75px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.square {
+	width: calc(100% / 3);
+	height: calc(100% / 3);
+	background-color: #A3E7CD;
+	animation: flyingSquare 1.4s ease-in-out infinite;
+}
+
+.square--1 {
+	animation-delay: 0.2s;
+}
+
+.square--2 {
+	animation-delay: 0.3s;
+}
+
+.square--3 {
+	animation-delay: 0.4s;
+}
+
+.square--4 {
+	animation-delay: 0.1s;
+}
+
+.square--5 {
+	animation-delay: 0.2s;
+}
+
+.square--6 {
+	animation-delay: 0.3s;
+}
+
+.square--7 {
+	animation-delay: 0s;
+}
+
+.square--8 {
+	animation-delay: 0.1s;
+}
+
+.square--9 {
+	animation-delay: 0.2s;
+}
+
+@keyframes flyingSquare {
+	0%, 70%, 100% {
+		transform: scale(1);
+	} 35% {
+		transform: scale(0);
+	} 
+}
+
+/* End flying square */
