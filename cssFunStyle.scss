@@ -1,6 +1,7 @@
 /* Accelo neon light */
 body{
 	margin: 0;
+	font-family: "Helvetica Neue","Arial","sans-serif";
 }
 
 .projectContainer {
@@ -459,3 +460,138 @@ $instagram-border-width: $instagram-icon-width/15;
 }
 
 /* End flying square */
+
+/* */
+
+$neumorphism-container-color: #f3f4f7;
+
+@mixin neumorphism-shadow() {
+    box-shadow: 10px 10px 15px #dfdfe0, -6px -6px 10px #fff;
+}
+
+@mixin neumorphism-shadow-inset() {
+    box-shadow: inset 4px 4px 7px #dfdfe0, inset -6px -6px 10px #fff;
+}
+
+.neumorphismContainer {	
+	background-color: $neumorphism-container-color;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.neumorphismContent {
+	display: flex;;
+	flex: 1 1 auto;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.neumorphismContent__section {
+	display: flex;
+	justify-content: space-around;
+}
+
+@mixin neumorphism-element-event($color) {
+	&:hover {
+		box-shadow: 5px 5px 15px #dfdfe0, -5px -5px 10px #fff;
+	}
+	
+	&:active {
+		@include neumorphism-shadow-inset();
+	}
+}
+
+.neumorphismContent__card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	$background-color: $neumorphism-container-color;
+	width: 100%;
+	height: 150px;
+	border-radius: 7px;
+	background-color: $background-color;
+	
+	@include neumorphism-shadow();
+}
+
+.neumorphismContent__button {
+	$background-color: $neumorphism-container-color;
+    text-align: center;
+    padding: 16px 8px;
+    border: 0;
+    margin: 13px auto;
+    width: 100%;
+    font-weight: 400;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+	border-radius: 10px;
+	background-color: $background-color;
+	@include neumorphism-shadow();
+	
+	transition: box-shadow 0.2s ease, background-color 0.2s ease;
+	
+	@include neumorphism-element-event($background-color);
+}
+
+.neumorphismContent__iconButton {
+	$background-color: #f5f5f5;
+	width: 44px;
+	height: 44px;
+	line-height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	margin: 4px;
+	box-sizing: content-box;
+	border-radius: 35%;
+	background-color: $background-color;
+	@include neumorphism-shadow();
+	
+	transition: box-shadow 0.2s ease, background-color 0.2s ease;
+	@include neumorphism-element-event($background-color);
+}
+
+.neumorphismContent__iconButton:not(:first-of-type) {
+	margin-left: 16px;
+}
+
+.neumorphismContent__iconButton__symbol {
+	font-size: 20px;
+	color: black;
+}
+
+.neumorphismContent__arrowContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	$background-color: #f5f5f5;
+	width: 32px;
+	height: 32px;
+	border-radius: 7px;
+	cursor: pointer;
+	
+	@include neumorphism-shadow();
+	
+	transition: box-shadow 0.2s ease, background-color 0.2s ease;
+	@include neumorphism-element-event($background-color);
+}
+
+.neumorphismContent__arrowContainer__arrow{
+	padding: 2px;
+	border: solid black;
+	display: inline-block;
+	border-width: 0 2px 2px 0;
+}
+
+.neumorphismContent__arrowContainer__arrow--left {
+	transform: rotate(135deg);
+}
+
+.neumorphismContent__arrowContainer__arrow--right {
+	transform: rotate(-45deg);
+}
