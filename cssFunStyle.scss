@@ -466,7 +466,7 @@ $instagram-border-width: $instagram-icon-width/15;
 $neumorphism-container-color: #f3f4f7;
 
 @mixin neumorphism-shadow() {
-    box-shadow: 10px 10px 15px #dfdfe0, -6px -6px 10px #fff;
+    box-shadow: 6px 6px 10px #dfdfe0, -6px -6px 10px #fff;
 }
 
 @mixin neumorphism-shadow-inset() {
@@ -495,7 +495,7 @@ $neumorphism-container-color: #f3f4f7;
 
 @mixin neumorphism-element-event($color) {
 	&:hover {
-		box-shadow: 5px 5px 15px #dfdfe0, -5px -5px 10px #fff;
+		box-shadow: 4px 4px 7px #dfdfe0, -4px -4px 10px #fff;
 	}
 	
 	&:active {
