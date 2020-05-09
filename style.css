@@ -602,5 +602,73 @@ nav {
     transform: translateX(0px);
   }
 }
+.inputFieldContainer {
+  background-color: #303338;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+}
+
+.inputGroup {
+  position: relative;
+  opacity: 0;
+  animation: inputGroupFadeIn 0.25s 0.3s forwards;
+}
+
+@keyframes inputGroupFadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+.inputGroup:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+
+.inputField {
+  padding: 20px;
+  background-color: transparent;
+  color: #eee;
+  font-size: 13px;
+  border: 2px solid #F7F7F7;
+  border-radius: 8px;
+  outline: none;
+  z-index: 2;
+  position: relative;
+}
+.inputField:focus {
+  padding: 28px 26px 12px 14px;
+}
+.inputField:focus::placeholder {
+  opacity: 0;
+}
+
+.placeholderLabel {
+  position: absolute;
+  font-size: 13px;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  padding: 1px 5px;
+  color: #848c97;
+  opacity: 1;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  will-change: translate;
+}
+
+.inputField:focus + .placeholderLabel {
+  color: #6d7580;
+  font-size: 11px;
+  transform: translate(-58%, -20px);
+}
+
+.inputField:not(:placeholder-shown) {
+  padding: 28px 26px 12px 14px;
+}
+.inputField:not(:placeholder-shown) + .placeholderLabel {
+  color: #6d7580;
+  font-size: 11px;
+  transform: translate(-58%, -20px);
+}
 
 /*# sourceMappingURL=style.css.map */
