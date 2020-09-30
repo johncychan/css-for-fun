@@ -759,4 +759,33 @@ $inputOnFocusPadding: 28px 26px 12px 14px;
 
 .hoverButtonAnimationContainer {
 	background-color: #FFF;
+	background-color: #F9F9F9;
+}
+
+.hoverButtonAnimationContainer__button {
+	padding: 24px 36px;
+	color: #000;
+	cursor: pointer;
+	position: relative;
+	background-color: #F9F9F9;
+	
+	&::after, &::before {
+		border: 2px solid #000;
+		content: '';
+		position: absolute;
+		border-radius: 5px;
+		width: calc(100% - 4px);
+		height: calc(100% - 4px);
+		transition: all 0.2s ease;
+		left: 0;
+		bottom: 0;
+	}
+	
+	&:hover::after {
+		transform: translate(-5px, -5px);
+	}
+	
+	&:hover::before {
+		transform: translate(5px, 5px);
+	}
 }
