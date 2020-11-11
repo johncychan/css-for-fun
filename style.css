@@ -671,4 +671,34 @@ nav {
   transform: translate(-58%, -20px);
 }
 
+.hoverButtonAnimationContainer {
+  background-color: #FFF;
+  background-color: #F9F9F9;
+}
+
+.hoverButtonAnimationContainer__button {
+  padding: 24px 36px;
+  color: #000;
+  cursor: pointer;
+  position: relative;
+  background-color: #F9F9F9;
+}
+.hoverButtonAnimationContainer__button::after, .hoverButtonAnimationContainer__button::before {
+  border: 2px solid #000;
+  content: "";
+  position: absolute;
+  border-radius: 3px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  transition: all 0.2s ease;
+  left: 0;
+  bottom: 0;
+}
+.hoverButtonAnimationContainer__button:hover::after {
+  transform: translate(-5px, -5px);
+}
+.hoverButtonAnimationContainer__button:hover::before {
+  transform: translate(5px, 5px);
+}
+
 /*# sourceMappingURL=style.css.map */
