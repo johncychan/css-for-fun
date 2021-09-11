@@ -9,7 +9,7 @@ a {
 }
 
 .projectContainer {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -753,6 +753,64 @@ nav {
 }
 .nenoButtonContainer__button:hover:before {
   opacity: 1;
+}
+
+.gradientBoxShadowContainer {
+  --fs-300: 3em;
+  --fs-100: 1em;
+  --bg-primary: rgb(64, 48, 207);
+  --bg-secondary: rgb(237, 80, 37);
+  --br-025: 0.25em;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+}
+.gradientBoxShadowContainer h2, .gradientBoxShadowContainer p {
+  margin: 0;
+  padding: 0;
+}
+.gradientBoxShadowContainer .gradientBoxShadowBox {
+  --bf-graident: linear-gradient(315deg, var(--bg-primary), var(--bg-secondary));
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+  margin: 2em;
+  color: #fff;
+  max-width: 35ch;
+  border-radius: var(--br-025);
+  background-image: var(--bf-graident);
+  isolation: isolate;
+  transition: transform 0.25s ease;
+}
+.gradientBoxShadowContainer .gradientBoxShadowBox::after, .gradientBoxShadowContainer .gradientBoxShadowBox::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  z-index: -1;
+  transition: filter 0.25s ease;
+}
+.gradientBoxShadowContainer .gradientBoxShadowBox::after {
+  filter: blur(1em);
+}
+.gradientBoxShadowContainer .gradientBoxShadowBox::before {
+  filter: blur(0.75em);
+}
+.gradientBoxShadowContainer .gradientBoxShadowBox:hover {
+  transform: scale(1.125);
+}
+.gradientBoxShadowContainer .gradientBoxShadowBox:hover::after {
+  filter: blur(1.2em);
+}
+.gradientBoxShadowContainer .gradientBoxShadowBox:hover::before {
+  filter: blur(1.125em);
+}
+.gradientBoxShadowContainer .gradientBoxShadowBox__heading {
+  margin-bottom: max(3em, 10vmin);
+}
+.gradientBoxShadowContainer .gradientBoxShadowBox__content {
+  margin-top: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
