@@ -792,13 +792,14 @@ $inputOnFocusPadding: 28px 26px 12px 14px;
 
 .nenoButtonContainer {
 	--color-background: #1d1d1d;
-	--color-button: #24427a;
+	--color-button: #f26767;
+	--button-font-size: 2rem;
 	min-height: 100vh;
 	background-color: var(--color-background);
 }
 
 .nenoButtonContainer__button {
-	font-size: 2rem;
+	font-size: var(--button-font-size);
 	display: flex;
 	cursor: pointer;
 	color: var(--color-button);
@@ -834,7 +835,7 @@ $inputOnFocusPadding: 28px 26px 12px 14px;
 		
 		transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
 		filter: blur(1em);
-		opacity: 0.8;
+		opacity: 0.7;
 		pointer-events: none;
 		transition: opacity 0.1s linear;
 	}
