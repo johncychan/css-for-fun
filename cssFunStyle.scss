@@ -853,8 +853,8 @@ $inputOnFocusPadding: 28px 26px 12px 14px;
 .gradientBoxShadowContainer {
 	--fs-300: 3em;
 	--fs-100: 1em;
-	--bg-primary: rgb(64, 48, 207);
-	--bg-secondary: rgb(237, 80, 37);
+	--bg-primary: #e38f71;
+	--bg-secondary: #5dade1;
 	--br-025: 0.25em;
 	
 	font-family: "Poppins", sans-serif;
@@ -867,18 +867,19 @@ $inputOnFocusPadding: 28px 26px 12px 14px;
 	}
 	
 	.gradientBoxShadowBox {
-		--bf-graident: linear-gradient(315deg, var(--bg-primary), var(--bg-secondary));
+		--bf-graident: linear-gradient(315deg, var(--bg-primary), var(--bg-secondary) 70%);
 		position: relative;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		padding: 1em;
+		padding: 1.5em;
 		margin: 2em;
 		color: #fff;
 		max-width: 35ch;
 		border-radius: var(--br-025);
 		background-image: var(--bf-graident);
 		isolation: isolate;
+		box-sizing: border-box;
 		
 		transition: transform 0.250s ease;
 		
@@ -904,7 +905,7 @@ $inputOnFocusPadding: 28px 26px 12px 14px;
 			transform: scale(1.125);
 			
 			&::after {
-				filter: blur(1.2em);
+				filter: blur(1.25em);
 			}
 			
 			&::before {
